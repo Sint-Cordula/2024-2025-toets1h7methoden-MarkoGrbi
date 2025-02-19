@@ -42,6 +42,29 @@
 
 
         }
-
+        public static int GetPincode(int Aantal)
+        {
+            string pin = "";
+            int plus = 0;
+            Random random = new Random();
+            for (int i = 1; i <= Aantal; i++)
+            {
+                plus = random.Next(0,10);
+                pin += plus.ToString();
+            }
+            return Convert.ToInt32(pin);
+            
+        }
+        public static bool Aanmelden(int pincode, int pincodeTest)
+        {
+            if (pincode == pincodeTest)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
